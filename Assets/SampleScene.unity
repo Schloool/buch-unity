@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 363784900}
   - component: {fileID: 363784901}
   m_Layer: 0
-  m_Name: Access Test Object
+  m_Name: Bool Test Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,10 +164,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 363784898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bf35b2b2ded438793b625825a751d41, type: 3}
+  m_Script: {fileID: 11500000, guid: 3de70facba9b42c3897b2d6aa52810f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myVariable: 0
+  testBool: 0
 --- !u!1 &792057107
 GameObject:
   m_ObjectHideFlags: 0
