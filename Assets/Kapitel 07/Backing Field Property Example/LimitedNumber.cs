@@ -1,12 +1,12 @@
 ﻿public class LimitedNumber
 {
-    private int _number;
+    private int number;
 
     public int Number
     {
         get
         {
-            return _number;
+            return number;
         }
         set
         {
@@ -15,7 +15,7 @@
                 value = 100;
             }
             
-            _number = value;
+            number = value;
         }
     }
 

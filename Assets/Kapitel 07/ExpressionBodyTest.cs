@@ -1,6 +1,6 @@
 ﻿public class ExpressionBodyTest
 {
-    private int _attribute;
+    private int attribute;
 
-    public int Attribute => _attribute;
+    public int Attribute => attribute;
 }

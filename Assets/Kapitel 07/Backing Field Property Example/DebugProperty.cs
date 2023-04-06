@@ -2,19 +2,19 @@
 
 public class DebugProperty
 {
-    private int _attribute;
+    private int attribute;
 
     public int Attribute
     {
         get
         {
             Debug.Log("Lesen");
-            return _attribute;
+            return attribute;
         }
         set
         {
             Debug.Log("Schreiben");
-            _attribute = value;
+            attribute = value;
         }
     }
 }

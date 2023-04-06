@@ -1,10 +1,10 @@
 ﻿public class PropertyBackingTest
 {
-    private string _attribute;
+    private string attribute;
 
     public string Attribute
     {
-        get => _attribute;
-        private set => _attribute = value;
+        get => attribute;
+        private set => attribute = value;
     }
 }
