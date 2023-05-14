@@ -33,4 +33,12 @@ public class NumberComparison : MonoBehaviour
         
         Debug.Log("a und b sind gleich groß.");
     }
+
+    private void CompareNumbersTernary(int a, int b)
+    {
+        string output = a > b ? 
+            "a ist größer als b" : b > a ?
+                "b ist größer als a" : "a und b sind gleich groß";
+        Debug.Log(output);
+    }
 }
