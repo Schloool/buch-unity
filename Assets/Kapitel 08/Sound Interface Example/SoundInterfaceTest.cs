@@ -4,10 +4,10 @@ public class SoundInterfaceTest : MonoBehaviour
 {
     private void Start()
     {
-        Button button = new Button();
+        SoundButton soundButton = new SoundButton();
         Bomb bomb = FindObjectOfType<Bomb>();
         
-        TestSoundObject(button);
+        TestSoundObject(soundButton);
         TestSoundObject(bomb);
     }
 

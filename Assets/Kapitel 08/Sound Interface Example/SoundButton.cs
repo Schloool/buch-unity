@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Button : ISoundObject
+public class SoundButton : ISoundObject
 {
     public float SoundVolume => 5f;
     
