@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e14afc45e79a4930ad9bace8ab4d8f04, type: 3}
+  m_Name: Enemy Heavy
+  m_EditorClassIdentifier: 
+  model: {fileID: 919132149155446097, guid: 9dfab97d72d357f49a262ff208e77a4e, type: 3}
+  speed: 1
+  healthPoints: 100
+  damage: 10
+  moneyOnKill: 10

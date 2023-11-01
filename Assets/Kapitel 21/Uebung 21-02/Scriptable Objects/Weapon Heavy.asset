@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 760f2497c3844d95843177e4329445ab, type: 3}
+  m_Name: Weapon Heavy
+  m_EditorClassIdentifier: 
+  name: Blaster
+  model: {fileID: 919132149155446097, guid: 51fa893cde1363845802f7f887046b11, type: 3}
+  price: 100
+  shotFrequency: 4
+  bulletDamage: 60
+  range: 6

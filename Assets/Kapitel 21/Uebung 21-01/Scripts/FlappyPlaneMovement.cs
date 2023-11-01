@@ -1,0 +1,34 @@
+﻿using System;
+using UnityEngine;
+
+public class FlappyPlaneMovement : MonoBehaviour
+{
+    public event Action OnDeath;
+    
+    [SerializeField] private float jumpForce;
+
+    private Rigidbody2D rigidbody;
+
+    private void Start()
+    {
+        rigidbody = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        if (!Input.GetMouseButtonDown(0)) return;
+
+        rigidbody.velocity = Vector3.zero;
+        rigidbody.Sleep();
+        rigidbody.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
+    }
+    
+    public void Crash()
+    {
+        if (!rigidbody.simulated) return;
+        
+        OnDeath?.Invoke();
+        rigidbody.simulated = false;
+        Time.timeScale = 0f;
+    }
+}
