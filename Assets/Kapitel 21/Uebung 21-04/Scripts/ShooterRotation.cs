@@ -5,16 +5,25 @@ public class ShooterCamera : MonoBehaviour
     [SerializeField] private float sensitivity;
     [SerializeField] private float maxVerticalRotation = 90f;
 
+    private ShooterTimer timer;
+
     private float rotationX;
     private float rotationY;
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        timer = FindObjectOfType<ShooterTimer>();
     }
 
     void Update()
     {
+        if (timer.RemainingTime < 0f)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Destroy(this);
+        }
+        
         float mouseX = Input.GetAxis("Mouse X") * sensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * sensitivity;
 

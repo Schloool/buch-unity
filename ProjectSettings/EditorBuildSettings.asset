@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Kapitel 12/Uebung 12-03/U12-03.unity
-    guid: 1d83064033eec90438ea06164e1af6d0
+    path: Assets/Kapitel 06/Listings/Scene Test/Capsule Scene.unity
+    guid: 49a7b3d8092a95045a228ea99457c8e8
   m_configObjects: {}

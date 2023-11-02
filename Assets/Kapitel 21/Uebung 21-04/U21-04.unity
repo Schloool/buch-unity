@@ -812,7 +812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57754a595bbd41dfa621dc2778110a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 4
+  startTime: 15
 --- !u!4 &842079565
 Transform:
   m_ObjectHideFlags: 0
@@ -1970,7 +1970,6 @@ GameObject:
   - component: {fileID: 1939375607}
   - component: {fileID: 1939375605}
   - component: {fileID: 1939375608}
-  - component: {fileID: 1939375609}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2124,18 +2123,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 15437003927550696, guid: a754333f045ac9c42a7a2b813ee361b0, type: 3}
   spawnPosition: {fileID: 2006806915}
   reloadDuration: 0.5
---- !u!114 &1939375609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939375600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22c4229ed0bf4966919474cc8c521e49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2006806914
 GameObject:
   m_ObjectHideFlags: 0
