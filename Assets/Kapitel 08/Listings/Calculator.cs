@@ -1,7 +1,8 @@
 ﻿public class Calculator
 {
-    public static int AddNumbers(int a, int b)
+    public static int AddNumbers(string expression)
     {
-        return a + b;
+        string[] numbers = expression.Split("+");
+        return int.Parse(numbers[0]) + int.Parse(numbers[1]);
     }       
 }

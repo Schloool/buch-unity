@@ -7,11 +7,11 @@ public class ConvertionTest : MonoBehaviour
         Mammal mammal = new Mammal(10f);
         Mammal cat = new Cat(5f, 150);
         
-        TestCatConversion(mammal);
-        TestCatConversion(cat);
+        TestConversionToCat(mammal);
+        TestConversionToCat(cat);
     }
 
-    private void TestCatConversion(Mammal mammal)
+    private void TestConversionToCat(Mammal mammal)
     {
         if (mammal is Cat cat)
         {

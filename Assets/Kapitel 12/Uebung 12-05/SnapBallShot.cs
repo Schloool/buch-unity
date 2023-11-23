@@ -5,7 +5,6 @@ public class SnapBallShot : MonoBehaviour
 {
     [SerializeField] private float snapForce;
 
-
     private Camera camera;
     private SnapBallGameHandler snapBallGameHandler;
     private Coroutine roundLoseCoroutine;
