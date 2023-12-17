@@ -10,10 +10,14 @@ public class ShooterCamera : MonoBehaviour
     private float rotationX;
     private float rotationY;
 
+    private void Awake()
+    {
+        timer = FindObjectOfType<ShooterTimer>();
+    }
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        timer = FindObjectOfType<ShooterTimer>();
     }
 
     void Update()

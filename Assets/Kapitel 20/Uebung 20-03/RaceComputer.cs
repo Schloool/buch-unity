@@ -7,7 +7,7 @@ public class RaceComputer : MonoBehaviour
 
     private RaceCountdown countdown;
     
-    private void Start()
+    private void Awake()
     {
         countdown = FindObjectOfType<RaceCountdown>();
         countdown.OnChangeTimer += HandleCountdownUpdate;

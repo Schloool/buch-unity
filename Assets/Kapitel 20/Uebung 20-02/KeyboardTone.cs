@@ -8,7 +8,7 @@ public class KeyboardTone : MonoBehaviour
     
     [SerializeField] private List<KeyCode> keys;
 
-    private void Start()
+    private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
     }

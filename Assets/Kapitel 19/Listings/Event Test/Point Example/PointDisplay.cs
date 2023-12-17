@@ -6,7 +6,7 @@ public class PointDisplay : MonoBehaviour
     private TMP_Text pointText;
     private PointCounter pointCounter;
 
-    private void Start()
+    private void Awake()
     {
         pointText = GetComponent<TMP_Text>();
         pointCounter = FindObjectOfType<PointCounter>();

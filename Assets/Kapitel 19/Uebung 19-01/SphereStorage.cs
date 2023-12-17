@@ -7,7 +7,7 @@ public class SphereStorage : MonoBehaviour
     
     private List<GameObject> spheres;
 
-    private void Start()
+    private void Awake()
     {
         spheres = new List<GameObject>();
     }

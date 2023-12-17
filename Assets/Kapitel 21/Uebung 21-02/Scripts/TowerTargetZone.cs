@@ -4,7 +4,7 @@ public class TowerTargetZone : MonoBehaviour
 {
     private TowerPlayerHealth playerHealth;
 
-    private void Start()
+    private void Awake()
     {
         playerHealth = FindObjectOfType<TowerPlayerHealth>();
     }

@@ -14,7 +14,7 @@ public class SnapBallGameHandler : MonoBehaviour
     private int score;
     private int failedShots;
 
-    private void Start()
+    private void Awake()
     {
         defaultBallPosition = ball.transform.position;
     }

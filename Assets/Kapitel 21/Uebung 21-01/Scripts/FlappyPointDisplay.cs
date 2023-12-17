@@ -6,7 +6,7 @@ public class FlappyPointDisplay : MonoBehaviour
     private TMP_Text text;
     private FlappyPointHandler pointHandler;
 
-    private void Start()
+    private void Awake()
     {
         text = GetComponent<TMP_Text>();
         

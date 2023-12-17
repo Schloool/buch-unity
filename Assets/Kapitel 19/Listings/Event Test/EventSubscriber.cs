@@ -4,7 +4,7 @@ public class EventSubscriber : MonoBehaviour
 {
     private EventSender eventSender;
     
-    private void Start()
+    private void Awake()
     {
         eventSender = FindObjectOfType<EventSender>();
         eventSender.MyEvent += HandleEvent;

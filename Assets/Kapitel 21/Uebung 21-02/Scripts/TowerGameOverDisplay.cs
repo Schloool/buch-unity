@@ -7,7 +7,7 @@ public class TowerGameOverDisplay : MonoBehaviour
 
     private TowerPlayerHealth playerHealth;
 
-    private void Start()
+    private void Awake()
     {
         playerHealth = FindObjectOfType<TowerPlayerHealth>();
         playerHealth.OnHealthUpdate += HandleHealthUpdate;

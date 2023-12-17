@@ -17,11 +17,14 @@ public class TowerWaveHandler : MonoBehaviour
     [SerializeField] private Transform targetPoint;
 
     private TowerMoneyHandler moneyHandler;
-    
-    private IEnumerator Start()
+
+    private void Awake()
     {
         moneyHandler = GetComponent<TowerMoneyHandler>();
-        
+    }
+
+    private IEnumerator Start()
+    {
         CurrentWave = 1;
         ActiveEnemies = new List<TowerEnemy>();
 

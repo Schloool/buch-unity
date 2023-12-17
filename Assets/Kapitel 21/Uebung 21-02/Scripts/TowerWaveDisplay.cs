@@ -6,7 +6,7 @@ public class TowerWaveDisplay : MonoBehaviour
     private TMP_Text text;
     private TowerWaveHandler waveHandler;
     
-    private void Start()
+    private void Awake()
     {
         text = GetComponent<TMP_Text>();
         waveHandler = FindObjectOfType<TowerWaveHandler>();

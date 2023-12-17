@@ -6,7 +6,7 @@ public class RaceCountdownDisplay : MonoBehaviour
     private TMP_Text countdownText;
     private RaceCountdown countdown;
     
-    private void Start()
+    private void Awake()
     {
         countdownText = GetComponent<TMP_Text>();
         countdown = FindObjectOfType<RaceCountdown>();

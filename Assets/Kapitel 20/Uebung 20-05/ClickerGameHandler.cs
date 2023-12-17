@@ -24,7 +24,7 @@ public class ClickerGameHandler : MonoBehaviour
     [SerializeField] private int points;
     [SerializeField] private List<ClickerUpgrade> upgrades;
 
-    private void Start()
+    private void Awake()
     {
         saveFilePath = Application.persistentDataPath + "/clicker.json";
         if (File.Exists(saveFilePath))
@@ -36,7 +36,10 @@ public class ClickerGameHandler : MonoBehaviour
             points = 0;
             upgrades = new List<ClickerUpgrade>();
         }
-        
+    }
+
+    private void Start()
+    {
         OnChangePoints?.Invoke(points);
         OnChangeUpgrades?.Invoke(upgrades);
         StartCoroutine(TimeUpgradeRoutine());

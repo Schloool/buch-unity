@@ -6,9 +6,13 @@ public class PointSaver : MonoBehaviour
     
     private int currentPoints;
 
-    private void Start()
+    private void Awake()
     {
         currentPoints = PlayerPrefs.GetInt(PointKey, 0);
+    }
+
+    private void Start()
+    {
         PrintPoints();
     }
 

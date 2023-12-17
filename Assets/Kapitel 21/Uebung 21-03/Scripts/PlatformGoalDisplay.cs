@@ -7,7 +7,7 @@ public class PlatformGoalDisplay : MonoBehaviour
 
     private PlatformGoal goal;
     
-    private void Start()
+    private void Awake()
     {
         goal = FindObjectOfType<PlatformGoal>();
         goal.OnReachGoal += HandleReachGoal;

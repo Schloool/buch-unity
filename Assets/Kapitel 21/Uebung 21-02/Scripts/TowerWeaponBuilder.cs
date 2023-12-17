@@ -9,7 +9,7 @@ public class TowerWeaponBuilder : MonoBehaviour
     
     private Camera camera;
 
-    private void Start()
+    private void Awake()
     {
         camera = Camera.main;
     }

@@ -10,10 +10,14 @@ public class PongBall : MonoBehaviour
     
     public Vector3 CurrentDirection { get; set; }
 
-    private void Start()
+    private void Awake()
     {
         defaultSpeed = speed;
         defaultPosition = transform.position;
+    }
+
+    private void Start()
+    {
         StartCoroutine(ResetBall());
     }
 

@@ -6,7 +6,7 @@ public class ShooterPointDisplay : MonoBehaviour
     private TMP_Text text;
     private ShooterPointCounter pointCounter;
 
-    private void Start()
+    private void Awake()
     {
         text = GetComponent<TMP_Text>();
         pointCounter = FindObjectOfType<ShooterPointCounter>();

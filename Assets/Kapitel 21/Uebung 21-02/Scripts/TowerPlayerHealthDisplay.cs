@@ -6,7 +6,7 @@ public class TowerPlayerHealthDisplay : MonoBehaviour
     private Image fillImage;
     private TowerPlayerHealth playerHealth;
 
-    private void Start()
+    private void Awake()
     {
         fillImage = GetComponent<Image>();
         playerHealth = FindObjectOfType<TowerPlayerHealth>();

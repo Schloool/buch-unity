@@ -6,12 +6,15 @@ public class PlatformDiamondDisplay : MonoBehaviour
     private TMP_Text text;
     private PlatformDiamondCollector diamondCollector;
 
-    private void Start()
+    private void Awake()
     {
         text = GetComponent<TMP_Text>();
         diamondCollector = FindObjectOfType<PlatformDiamondCollector>();
         diamondCollector.OnCollectDiamond += HandleCollectDiamond;
-        
+    }
+
+    private void Start()
+    {
         HandleCollectDiamond(0);
     }
 

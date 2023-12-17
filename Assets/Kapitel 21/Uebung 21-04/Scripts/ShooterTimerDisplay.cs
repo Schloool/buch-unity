@@ -6,7 +6,7 @@ public class ShooterTimerDisplay : MonoBehaviour
     private Image timerImage;
     private ShooterTimer timer;
     
-    private void Start()
+    private void Awake()
     {
         timerImage = GetComponent<Image>();
         timer = FindObjectOfType<ShooterTimer>();

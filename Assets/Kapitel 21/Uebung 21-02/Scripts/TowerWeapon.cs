@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
@@ -9,9 +10,13 @@ public class TowerWeapon : MonoBehaviour
     
     private TowerWaveHandler waveHandler;
 
-    private void Start()
+    private void Awake()
     {
         waveHandler = FindObjectOfType<TowerWaveHandler>();
+    }
+
+    private void Start()
+    {
         StartCoroutine(ShootRoutine());
     }
 

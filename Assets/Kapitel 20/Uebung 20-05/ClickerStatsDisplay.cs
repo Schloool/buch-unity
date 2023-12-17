@@ -10,7 +10,7 @@ public class ClickerStatsDisplay : MonoBehaviour
    
    private ClickerGameHandler gameHandler;
 
-   private void Start()
+   private void Awake()
    {
       gameHandler = FindObjectOfType<ClickerGameHandler>();
       gameHandler.OnChangePoints += HandlePointsChange;

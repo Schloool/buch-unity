@@ -5,7 +5,7 @@ public class SnapBallGoal : MonoBehaviour
     private SnapBallGameHandler snapBallGameHandler;
     private SnapBallShot snapBallShot;
 
-    private void Start()
+    private void Awake()
     {
         snapBallGameHandler = FindObjectOfType<SnapBallGameHandler>();
         snapBallShot = FindObjectOfType<SnapBallShot>();

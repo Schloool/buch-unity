@@ -4,7 +4,7 @@ public class PlatformDiamond : MonoBehaviour
 {
     private PlatformDiamondCollector collector;
 
-    private void Start()
+    private void Awake()
     {
         collector = FindObjectOfType<PlatformDiamondCollector>();
     }

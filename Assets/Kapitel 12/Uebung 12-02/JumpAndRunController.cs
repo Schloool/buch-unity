@@ -7,7 +7,7 @@ public class JumpAndRunController : MonoBehaviour
 
     private Rigidbody rigidbody;
 
-    private void Start()
+    private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
     }

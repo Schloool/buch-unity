@@ -8,7 +8,7 @@ public class CharacterMovementAnimator : MonoBehaviour
     private Rigidbody rigidbody;
     private Animator animator;
 
-    private void Start()
+    private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();

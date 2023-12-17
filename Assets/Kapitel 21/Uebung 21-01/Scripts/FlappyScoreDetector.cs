@@ -4,7 +4,7 @@ public class FlappyScoreDetector : MonoBehaviour
 {
     private FlappyPointHandler pointHandler;
 
-    private void Start()
+    private void Awake()
     {
         pointHandler = FindObjectOfType<FlappyPointHandler>();
     }

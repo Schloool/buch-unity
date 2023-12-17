@@ -11,7 +11,7 @@ public class TowerPlayerHealth : MonoBehaviour
     
     private float currentHealth;
 
-    private void Start()
+    private void Awake()
     {
         currentHealth = maxHealth;
     }

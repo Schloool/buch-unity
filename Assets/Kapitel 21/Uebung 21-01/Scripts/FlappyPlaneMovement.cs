@@ -9,7 +9,7 @@ public class FlappyPlaneMovement : MonoBehaviour
 
     private Rigidbody2D rigidbody;
 
-    private void Start()
+    private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
     }

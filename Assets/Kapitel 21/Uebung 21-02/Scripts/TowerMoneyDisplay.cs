@@ -6,7 +6,7 @@ public class TowerMoneyDisplay : MonoBehaviour
     private TMP_Text text;
     private TowerMoneyHandler moneyHandler;
 
-    private void Start()
+    private void Awake()
     {
         text = GetComponent<TMP_Text>();
         moneyHandler = FindObjectOfType<TowerMoneyHandler>();

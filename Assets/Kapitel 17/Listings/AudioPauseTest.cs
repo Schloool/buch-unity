@@ -4,7 +4,7 @@ public class AudioPauseTest : MonoBehaviour
 {
     private AudioSource audioSource;
 
-    private void Start()
+    private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
     }

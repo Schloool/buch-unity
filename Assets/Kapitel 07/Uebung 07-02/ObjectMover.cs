@@ -7,7 +7,7 @@ public class ObjectMover : MonoBehaviour
     
     private MeshRenderer[] meshRenderers;
 
-    private void Start()
+    private void Awake()
     {
         meshRenderers = FindObjectsOfType<MeshRenderer>();
     }

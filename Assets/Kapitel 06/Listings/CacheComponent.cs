@@ -4,7 +4,7 @@ public class CacheComponent : MonoBehaviour
 {
     private ConsolePrinter[] printers;
 
-    private void Start()
+    private void Awake()
     {
         printers = FindObjectsOfType<ConsolePrinter>();
     }

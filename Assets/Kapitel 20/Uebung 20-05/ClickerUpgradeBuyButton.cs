@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,17 +14,20 @@ public class ClickerUpgradeBuyButton : MonoBehaviour
     private Button button;
     private ClickerGameHandler gameHandler;
 
+    private void Awake()
+    {
+        button = GetComponent<Button>();
+        gameHandler = FindObjectOfType<ClickerGameHandler>();
+        gameHandler.OnChangePoints += HandlePointsChange;
+        gameHandler.OnChangeUpgrades += HandleUpgradesChange;
+    }
+
     private void Start()
     {
         nameText.text = upgrade.name;
         valueText.text = upgrade is ClickerClickUpgrade clickUpgrade
             ? $"+ {clickUpgrade.pointsPerClick} Punkte pro Klick"
             : $"+ {((ClickerTimeUpgrade) upgrade).pointsPerSecond} Punkte pro Sekunde";
-        
-        button = GetComponent<Button>();
-        gameHandler = FindObjectOfType<ClickerGameHandler>();
-        gameHandler.OnChangePoints += HandlePointsChange;
-        gameHandler.OnChangeUpgrades += HandleUpgradesChange;
     }
 
     private void OnDestroy()

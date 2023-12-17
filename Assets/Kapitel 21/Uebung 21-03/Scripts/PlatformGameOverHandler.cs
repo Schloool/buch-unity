@@ -5,7 +5,7 @@ public class PlatformGameOverHandler : MonoBehaviour
 {
     private PlatformPlayerHealth playerHealth;
 
-    private void Start()
+    private void Awake()
     {
         playerHealth = FindObjectOfType<PlatformPlayerHealth>();
         playerHealth.OnDeath += HandlePlayerDeath;

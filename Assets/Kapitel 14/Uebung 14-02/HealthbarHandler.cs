@@ -8,7 +8,7 @@ public class HealthbarHandler : MonoBehaviour
     private Image healthBarImage;
     private float currentHealthPoints;
 
-    private void Start()
+    private void Awake()
     {
         healthBarImage = GetComponent<Image>();
         currentHealthPoints = startHealthPoints;

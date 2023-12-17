@@ -10,7 +10,7 @@ public class SphereManEditor : MonoBehaviour
     private Camera camera;
     private int currentPlaceIndex;
     
-    private void Start()
+    private void Awake()
     {
         camera = Camera.main;
         PlacedSpheres = new GameObject[5];

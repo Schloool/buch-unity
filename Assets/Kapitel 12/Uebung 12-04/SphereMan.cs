@@ -4,11 +4,17 @@ using UnityEngine.SceneManagement;
 
 public class SphereMan : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    private GameObject[] spheres;
     
+    [SerializeField] private float speed;
+
+    private void Awake()
+    {
+        spheres = FindObjectOfType<SphereManEditor>().PlacedSpheres;
+    }
+
     private IEnumerator Start()
     {
-        GameObject[] spheres = FindObjectOfType<SphereManEditor>().PlacedSpheres;
         while (true)
         {
             foreach (GameObject sphere in spheres)

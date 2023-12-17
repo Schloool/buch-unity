@@ -6,7 +6,7 @@ public class AgentMover : MonoBehaviour
     private NavMeshAgent agent;
     private Camera camera;
 
-    private void Start()
+    private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         camera = Camera.main;

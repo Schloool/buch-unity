@@ -10,11 +10,14 @@ public class PlatformHealthDisplay : MonoBehaviour
 
     private PlatformPlayerHealth playerHealth;
 
-    private void Start()
+    private void Awake()
     {
         playerHealth = FindObjectOfType<PlatformPlayerHealth>();
         playerHealth.OnHealthUpdate += HandleHealthUpdate;
-        
+    }
+
+    private void Start()
+    {
         HandleHealthUpdate(playerHealth.MaxHealth);
     }
 

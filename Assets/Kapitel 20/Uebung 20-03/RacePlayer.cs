@@ -8,7 +8,7 @@ public class RacePlayer : MonoBehaviour
     private Rigidbody rigidbody;
     private bool canMove;
     
-    private void Start()
+    private void Awake()
     {
         countdown = FindObjectOfType<RaceCountdown>();
         countdown.OnChangeTimer += HandleCountdownUpdate;

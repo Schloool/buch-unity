@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,13 +13,16 @@ public class TowerWeaponButton : MonoBehaviour
     private TowerMoneyHandler moneyHandler;
     private TowerWeaponBuilder weaponBuilder;
 
-    private void Start()
+    private void Awake()
     {
         button = GetComponent<Button>();
         moneyHandler = FindObjectOfType<TowerMoneyHandler>();
         moneyHandler.OnChangeMoney += HandleChangeMoney;
         weaponBuilder = FindObjectOfType<TowerWeaponBuilder>();
+    }
 
+    private void Start()
+    {
         nameText.text = weaponType.name;
         priceText.text = $"{weaponType.price}$";
         

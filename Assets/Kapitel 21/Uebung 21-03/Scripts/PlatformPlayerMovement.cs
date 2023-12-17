@@ -13,7 +13,7 @@ public class PlatformPlayerMovement : MonoBehaviour
     private Animator animator;
     private bool isJumping;
 
-    private void Start()
+    private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();

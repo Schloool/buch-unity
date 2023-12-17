@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ShooterTargetSpawner : MonoBehaviour
 {
@@ -9,11 +11,14 @@ public class ShooterTargetSpawner : MonoBehaviour
     private ShooterPointCounter pointCounter;
     private ShooterTimer timer;
 
-    private void Start()
+    private void Awake()
     {
         pointCounter = GetComponent<ShooterPointCounter>();
         timer = GetComponent<ShooterTimer>();
-        
+    }
+
+    private void Start()
+    {
         for (int i = 0; i < 10; i++)
         {
             SpawnTarget();

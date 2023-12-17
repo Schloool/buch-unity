@@ -11,7 +11,7 @@ public class FlappyGameOverDisplay : MonoBehaviour
     private FlappyPlaneMovement planeMovement;
     private FlappyPointHandler pointHandler;
     
-    private void Start()
+    private void Awake()
     {
         planeMovement = FindObjectOfType<FlappyPlaneMovement>();
         pointHandler = FindObjectOfType<FlappyPointHandler>();

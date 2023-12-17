@@ -9,7 +9,7 @@ public class RaceOverDisplay : MonoBehaviour
     private bool isGameOver;
     private RaceGoal goal;
 
-    private void Start()
+    private void Awake()
     {
         isGameOver = false;
         goal = FindObjectOfType<RaceGoal>();

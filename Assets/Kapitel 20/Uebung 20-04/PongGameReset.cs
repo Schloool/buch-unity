@@ -6,7 +6,7 @@ public class PongGameReset : MonoBehaviour
 {
     private PongScoreZone[] scoreZones;
 
-    private void Start()
+    private void Awake()
     {
         scoreZones = FindObjectsOfType<PongScoreZone>();
         scoreZones.ToList().ForEach(zone => zone.OnScore += HandleScoreChange);

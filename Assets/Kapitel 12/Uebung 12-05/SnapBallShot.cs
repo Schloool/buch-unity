@@ -9,7 +9,7 @@ public class SnapBallShot : MonoBehaviour
     private SnapBallGameHandler snapBallGameHandler;
     private Coroutine roundLoseCoroutine;
 
-    private void Start()
+    private void Awake()
     {
         camera = Camera.main;
         snapBallGameHandler = FindObjectOfType<SnapBallGameHandler>();

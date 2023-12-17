@@ -5,7 +5,7 @@ public class PointCountSound : MonoBehaviour
     private AudioSource audioSource;
     private PointCounter pointCounter;
 
-    private void Start()
+    private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
         pointCounter = FindObjectOfType<PointCounter>();

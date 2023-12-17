@@ -10,7 +10,7 @@ public class PlatformPlayerHealth : MonoBehaviour
     
     [SerializeField] private int currentHealth = 3;
 
-    private void Start()
+    private void Awake()
     {
         MaxHealth = currentHealth;
     }

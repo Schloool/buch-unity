@@ -5,11 +5,16 @@ using UnityEngine.UI;
 public class ImageFillTest : MonoBehaviour
 {
     [SerializeField] private float timeToFill;
-    
+
+    private Image image;
+
+    private void Awake()
+    {
+        image = GetComponent<Image>(); 
+    }
+
     private IEnumerator Start()
     {
-        Image image = GetComponent<Image>(); 
-        
         float timePassed = 0f;
         while (timePassed <= timeToFill)
         {

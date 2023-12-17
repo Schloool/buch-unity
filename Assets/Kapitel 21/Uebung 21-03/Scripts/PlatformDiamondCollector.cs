@@ -9,7 +9,7 @@ public class PlatformDiamondCollector : MonoBehaviour
     
     private int collectedCount;
 
-    private void Start()
+    private void Awake()
     {
         AllDiamondCount = FindObjectsOfType<PlatformDiamond>().Length;
         collectedCount = 0;

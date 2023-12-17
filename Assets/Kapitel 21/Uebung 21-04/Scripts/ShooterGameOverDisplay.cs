@@ -10,7 +10,7 @@ public class ShooterGameOverDisplay : MonoBehaviour
     private ShooterPointCounter pointCounter;
     private ShooterTimer timer;
 
-    private void Start()
+    private void Awake()
     {
         pointCounter = FindObjectOfType<ShooterPointCounter>();
         timer = FindObjectOfType<ShooterTimer>();
