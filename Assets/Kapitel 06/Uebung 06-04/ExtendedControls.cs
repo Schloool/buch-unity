@@ -12,7 +12,8 @@ public class ExtendedControls : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             x = 1;
-        } else if (Input.GetKey(KeyCode.LeftArrow))
+        } 
+        else if (Input.GetKey(KeyCode.LeftArrow))
         {
             x = -1;
         }
@@ -20,7 +21,8 @@ public class ExtendedControls : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             y = 1;
-        } else if (Input.GetKey(KeyCode.DownArrow))
+        } 
+        else if (Input.GetKey(KeyCode.DownArrow))
         {
             y = -1;
         }

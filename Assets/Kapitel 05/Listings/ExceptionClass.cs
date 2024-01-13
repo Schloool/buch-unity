@@ -1,11 +1,21 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class ExceptionClass : MonoBehaviour
 {
     private void Start()
     {
-        RuntimeException();
+        try
+        {
+            RuntimeException();
+        }
+        catch (IndexOutOfRangeException)
+        {
+            Debug.Log("IndexOutOfRangeException abgefangen!");
+        }
         
+        Debug.Log("Hallo!");
+
     }
 
     public void RuntimeException()

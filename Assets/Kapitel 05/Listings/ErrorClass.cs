@@ -3,8 +3,8 @@
 public class ErrorClass : MonoBehaviour
 {
     private int healthPoints;
-    
-    // private Void Start()
+
+    // private void Start
     // {
     // }
 

@@ -9,10 +9,12 @@ public class HealthPointMessage : MonoBehaviour
         if (hpRatio < 0)
         {
             Debug.Log("Fehler: Weniger als 0 HP.");
-        } else if (Mathf.Approximately(hpRatio, 0f))
+        } 
+        else if (Mathf.Approximately(hpRatio, 0f))
         {
             Debug.Log("Ich bin tot!");
-        } else if (hpRatio <= 0.3f)
+        } 
+        else if (hpRatio <= 0.3f)
         {
             Debug.Log("Nur noch wenig HP!");
         }

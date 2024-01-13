@@ -7,7 +7,8 @@ public class NumberComparison : MonoBehaviour
         if (a > b)
         {
             Debug.Log("a ist größer als b.");
-        } else if (b > a)
+        } 
+        else if (b > a)
         {
             Debug.Log("b ist größer als a.");
         }

@@ -4,19 +4,30 @@ public class SwitchTest : MonoBehaviour
 {
     private void Start()
     {
-        int x = Random.Range(-5, 5);
-        switch (x)
+        PrintSeasonToIndex(0);
+        PrintSeasonToIndex(2);
+        PrintSeasonToIndex(7);
+    }
+    
+    void PrintSeasonToIndex(int index)
+    {
+        switch (index)
         {
             case 0:
-                Debug.Log("x ist 0");
+                Debug.Log("Frühling");
                 break;
             
-            case 1: case 2:
-                Debug.Log("x ist 1 oder 2");
+            case 1:
+            case 2:
+                Debug.Log("Sommer oder Herbst");
+                break;
+            
+            case 3:
+                Debug.Log("Winter");
                 break;
             
             default:
-                Debug.Log("x besitzt einen Wert < 0 oder > 2");
+                Debug.Log("Unbekannte Jahreszeit!");
                 break;
         }
     }
