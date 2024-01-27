@@ -15,7 +15,7 @@ public class ObjectMover : MonoBehaviour
     private void Update()
     {
         float xMovement = GetMovement();
-        if (Mathf.Approximately(xMovement, 0f)) return;
+        if (xMovement == 0f) return;
         
         foreach (MeshRenderer renderer in meshRenderers)
         {

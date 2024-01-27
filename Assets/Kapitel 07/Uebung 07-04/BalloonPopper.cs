@@ -15,7 +15,8 @@ public class BalloonPopper : MonoBehaviour
             Debug.Log("Es sind bereits alle Ballons geplatzt!");
             return;
         }
-        
-        Destroy(balloons[balloonIndex++]);
+
+        balloonIndex++;
+        Destroy(balloons[balloonIndex]);
     }
 }
