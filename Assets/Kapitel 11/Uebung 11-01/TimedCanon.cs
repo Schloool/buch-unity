@@ -18,7 +18,7 @@ public class TimedCanon : MonoBehaviour
     private void ShootBall()
     {
         CanonBall newCanonBall = Instantiate(canonBallPrefab, transform.position, Quaternion.identity);
-        newCanonBall.Direction = transform.forward;
+        newCanonBall.direction = transform.forward;
             
         Destroy(newCanonBall.gameObject, 3f);
     }

@@ -2,13 +2,12 @@
 
 public class PointSaver : MonoBehaviour
 {
-    private const string PointKey = "Points";
-    
+    private const string pointKey = "Points";
     private int currentPoints;
 
     private void Awake()
     {
-        currentPoints = PlayerPrefs.GetInt(PointKey, 0);
+        currentPoints = PlayerPrefs.GetInt(pointKey, 0);
     }
 
     private void Start()
@@ -20,14 +19,14 @@ public class PointSaver : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            PlayerPrefs.SetInt(PointKey, ++currentPoints);
+            PlayerPrefs.SetInt(pointKey, ++currentPoints);
             PrintPoints();
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             currentPoints = 0;
-            PlayerPrefs.DeleteKey(PointKey);
+            PlayerPrefs.DeleteKey(pointKey);
             Debug.Log("Punkte gelöscht.");
         }
     }

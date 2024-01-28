@@ -2,5 +2,5 @@
 
 public class GameLever : MonoBehaviour
 {
-    public bool IsWinnerLever { get; set; }
+    public bool isWinnerLever;
 }

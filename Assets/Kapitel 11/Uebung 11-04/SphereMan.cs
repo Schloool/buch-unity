@@ -10,7 +10,7 @@ public class SphereMan : MonoBehaviour
 
     private void Awake()
     {
-        spheres = FindObjectOfType<SphereManEditor>().PlacedSpheres;
+        spheres = FindObjectOfType<SphereManEditor>().placedSpheres;
     }
 
     private IEnumerator Start()

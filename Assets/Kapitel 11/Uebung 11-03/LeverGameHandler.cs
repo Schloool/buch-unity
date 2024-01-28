@@ -13,7 +13,7 @@ public class LeverGameHandler : MonoBehaviour
         camera = Camera.main;
         
         GameLever[] levers = FindObjectsOfType<GameLever>();
-        levers[Random.Range(0, levers.Length)].IsWinnerLever = true;
+        levers[Random.Range(0, levers.Length)].isWinnerLever = true;
     }
 
     private void Update()
@@ -25,7 +25,7 @@ public class LeverGameHandler : MonoBehaviour
 
         if (!hit.collider.TryGetComponent(out GameLever lever)) return;
 
-        if (lever.IsWinnerLever)
+        if (lever.isWinnerLever)
         {
             gateObject.transform.position += Vector3.up * 0.5f;
             StartCoroutine(RestartRoutine());

@@ -38,9 +38,6 @@ public class SnapBallShot : MonoBehaviour
 
     public void StopLoseCoroutine()
     {
-        if (roundLoseCoroutine != null)
-        {
-            StopCoroutine(roundLoseCoroutine);
-        }
+        StopCoroutine(roundLoseCoroutine);
     }
 }

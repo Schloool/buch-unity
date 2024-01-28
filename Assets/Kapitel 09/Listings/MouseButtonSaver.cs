@@ -2,11 +2,11 @@
 
 public class MouseButtonSaver : MonoBehaviour
 {
-    private const string PlayerPrefsKey = "LastButton";
+    private const string playerPrefsKey = "LastButton";
 
     private void Start()
     {
-        int lastIndex = PlayerPrefs.GetInt(PlayerPrefsKey, -1);
+        int lastIndex = PlayerPrefs.GetInt(playerPrefsKey, -1);
         string output = lastIndex == -1 ? "Keine Taste" : lastIndex.ToString();
         Debug.Log($"Zuletzt gedrückt: {output}");
     }
@@ -17,7 +17,7 @@ public class MouseButtonSaver : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(i))
             {
-                PlayerPrefs.SetInt(PlayerPrefsKey, i);
+                PlayerPrefs.SetInt(playerPrefsKey, i);
             }
         }
     }

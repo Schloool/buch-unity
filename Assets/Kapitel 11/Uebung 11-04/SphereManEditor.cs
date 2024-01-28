@@ -5,7 +5,7 @@ public class SphereManEditor : MonoBehaviour
     [SerializeField] private GameObject spherePrefab;
     [SerializeField] private GameObject sphereMan;
 
-    public GameObject[] PlacedSpheres { get; private set; }
+    public GameObject[] placedSpheres;
     
     private Camera camera;
     private int currentPlaceIndex;
@@ -13,13 +13,13 @@ public class SphereManEditor : MonoBehaviour
     private void Awake()
     {
         camera = Camera.main;
-        PlacedSpheres = new GameObject[5];
+        placedSpheres = new GameObject[5];
         currentPlaceIndex = 0;
     }
 
     private void Update()
     {
-        if (currentPlaceIndex >= PlacedSpheres.Length) return;
+        if (currentPlaceIndex >= placedSpheres.Length) return;
         
         if (!Input.GetMouseButtonDown(0)) return;
 
@@ -27,9 +27,9 @@ public class SphereManEditor : MonoBehaviour
         if (!Physics.Raycast(ray, out RaycastHit hit)) return;
 
         GameObject newSphere = Instantiate(spherePrefab, hit.point, Quaternion.identity);
-        PlacedSpheres[currentPlaceIndex++] = newSphere;
+        placedSpheres[currentPlaceIndex++] = newSphere;
 
-        if (currentPlaceIndex >= PlacedSpheres.Length)
+        if (currentPlaceIndex >= placedSpheres.Length)
         {
             sphereMan.SetActive(true);
         }

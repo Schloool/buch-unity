@@ -1,13 +1,14 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CanonBall : MonoBehaviour
 {
     [SerializeField] private float speed;
-    
-    public Vector3 Direction { get; set; }
+
+    public Vector3 direction;
 
     private void Update()
     {
-        transform.position += Direction * speed * Time.deltaTime;
+        transform.position += direction * speed * Time.deltaTime;
     }
 }

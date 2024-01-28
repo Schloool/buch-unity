@@ -3,13 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class SnapBallGameHandler : MonoBehaviour
 {
-    private const string HighscoreKey = "highscore";
-    
     [SerializeField] private Rigidbody ball;
     [SerializeField] private GameObject goalObject;
     [SerializeField] private float minGoalX;
     [SerializeField] private float maxGoalX;
 
+    private string highscoreKey = "highscore";
     private Vector3 defaultBallPosition;
     private int score;
     private int failedShots;
@@ -48,10 +47,10 @@ public class SnapBallGameHandler : MonoBehaviour
             return;
         }
         
-        int currentHighscore = PlayerPrefs.GetInt(HighscoreKey, 0);
+        int currentHighscore = PlayerPrefs.GetInt(highscoreKey, 0);
         if (score > currentHighscore)
         {
-            PlayerPrefs.SetInt(HighscoreKey, score);
+            PlayerPrefs.SetInt(highscoreKey, score);
             currentHighscore = score;
         }
 
