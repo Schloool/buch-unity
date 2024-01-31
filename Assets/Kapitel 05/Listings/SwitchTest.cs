@@ -9,7 +9,7 @@ public class SwitchTest : MonoBehaviour
         PrintSeasonToIndex(7);
     }
     
-    void PrintSeasonToIndex(int index)
+    private void PrintSeasonToIndex(int index)
     {
         switch (index)
         {
