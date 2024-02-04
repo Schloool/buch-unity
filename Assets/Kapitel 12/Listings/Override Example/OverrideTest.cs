@@ -5,9 +5,9 @@ public class OverrideTest : MonoBehaviour
     private void Start()
     {
         Car car = new Car();
-        Car truck = new Truck();
-        
         car.Honk();
-        truck.Honk();
+        
+        car = new Truck();
+        car.Honk();
     }
 }

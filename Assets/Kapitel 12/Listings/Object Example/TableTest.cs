@@ -9,5 +9,7 @@ public class TableTest : MonoBehaviour
 
         Table b = new Table(4);
         Debug.Log(table.Equals(b));
+        
+        Debug.Log(Equals(table, b));
     }
 }

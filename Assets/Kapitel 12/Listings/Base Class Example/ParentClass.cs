@@ -2,7 +2,7 @@
 
 public class ParentClass
 {
-    public string attribute = "Attribut";
+    public string attribute = "Feld";
 
     protected virtual void Method()
     {

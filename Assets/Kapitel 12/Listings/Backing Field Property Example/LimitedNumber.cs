@@ -18,9 +18,4 @@
             number = value;
         }
     }
-
-    public LimitedNumber(int number)
-    { 
-        Number = number;
-    }
 }

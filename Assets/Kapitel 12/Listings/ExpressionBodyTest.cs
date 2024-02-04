@@ -1,6 +1,8 @@
 ﻿public class ExpressionBodyTest
 {
-    private int attribute;
+    private int number;
 
-    public int Attribute => attribute;
+    public int Number => number;
+    
+    public int NumberTimesTen => number * 10;
 }

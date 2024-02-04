@@ -2,10 +2,11 @@
 
 public class SoundInterfaceTest : MonoBehaviour
 {
+    [SerializeField] private Bomb bomb;
+    
     private void Start()
     {
         SoundButton soundButton = new SoundButton();
-        Bomb bomb = FindObjectOfType<Bomb>();
         
         TestSoundObject(soundButton);
         TestSoundObject(bomb);

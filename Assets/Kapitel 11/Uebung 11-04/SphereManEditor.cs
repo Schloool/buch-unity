@@ -27,7 +27,8 @@ public class SphereManEditor : MonoBehaviour
         if (!Physics.Raycast(ray, out RaycastHit hit)) return;
 
         GameObject newSphere = Instantiate(spherePrefab, hit.point, Quaternion.identity);
-        placedSpheres[currentPlaceIndex++] = newSphere;
+        placedSpheres[currentPlaceIndex] = newSphere;
+        currentPlaceIndex++;
 
         if (currentPlaceIndex >= placedSpheres.Length)
         {
