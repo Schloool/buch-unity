@@ -2,7 +2,7 @@
 
 public class CupTest : MonoBehaviour
 {
-    public Cup[] cups;
+    [SerializeField] private Cup[] cups;
 
     private void Start()
     {

@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 public class LeverGameHandler : MonoBehaviour
 {
     [SerializeField] private GameObject gateObject;
+    [SerializeField] private LayerMask leverMask;
     
     private Camera camera;
+    private bool isRestarting;
     
     private void Awake()
     {
@@ -21,13 +23,19 @@ public class LeverGameHandler : MonoBehaviour
         if (!Input.GetMouseButtonDown(0)) return;
 
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-        if (!Physics.Raycast(ray, out RaycastHit hit)) return;
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, leverMask))
+        {
+            GameLever lever = hit.transform.GetComponent<GameLever>();
+            CheckLever(lever);
+        }
+    }
 
-        if (!hit.collider.TryGetComponent(out GameLever lever)) return;
-
-        if (lever.isWinnerLever)
+    private void CheckLever(GameLever lever)
+    {
+        if (lever.isWinnerLever && !isRestarting)
         {
             gateObject.transform.position += Vector3.up * 0.5f;
+            isRestarting = true;
             StartCoroutine(RestartRoutine());
         }
     }

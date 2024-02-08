@@ -168,6 +168,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gateObject: {fileID: 1726108770}
+  leverMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &248819902
 PrefabInstance:
   m_ObjectHideFlags: 0

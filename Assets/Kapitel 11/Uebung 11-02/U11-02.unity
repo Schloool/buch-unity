@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f480a333aac34269a8d54b844e896430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 6
   jumpForce: 8
 --- !u!54 &573177415
 Rigidbody:
@@ -269,7 +269,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &692300094
 GameObject:

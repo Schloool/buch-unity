@@ -19,7 +19,8 @@ public class PointSaver : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            PlayerPrefs.SetInt(pointKey, ++currentPoints);
+            currentPoints++;
+            PlayerPrefs.SetInt(pointKey, currentPoints);
             PrintPoints();
         }
 

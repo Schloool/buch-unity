@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class SnapBallGameHandler : MonoBehaviour
 {
@@ -16,6 +18,11 @@ public class SnapBallGameHandler : MonoBehaviour
     private void Awake()
     {
         defaultBallPosition = ball.transform.position;
+    }
+
+    private void Start()
+    {
+        ResetRound();
     }
 
     public void ResetRound()
