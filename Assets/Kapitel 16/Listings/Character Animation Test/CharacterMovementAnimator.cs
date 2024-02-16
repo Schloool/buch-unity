@@ -7,32 +7,42 @@ public class CharacterMovementAnimator : MonoBehaviour
     
     private Rigidbody rigidbody;
     private Animator animator;
+    private bool jump;
 
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
+        
     }
 
     private void Update()
     {
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
-        transform.Translate(movement * Time.deltaTime * speed, Space.World);
-        animator.SetFloat("moveXZ", movement.magnitude);
-
-        if (movement.magnitude > 0f)
-        {
-            transform.rotation = Quaternion.LookRotation(movement);
-        }
-        
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            jump = true;
         }
     }
 
     private void FixedUpdate()
     {
+        Vector3 moveInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+        Vector3 newVelocity = moveInput * speed;
+        newVelocity.y = rigidbody.velocity.y;
+        rigidbody.velocity = newVelocity;
+
+        if (moveInput.magnitude > 0f)
+        {
+            transform.rotation = Quaternion.LookRotation(moveInput);
+        }
+
+        if (jump)
+        {
+            rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            jump = false;
+        }
+        
+        animator.SetFloat("moveXZ", moveInput.magnitude);
         animator.SetFloat("moveY", Mathf.Abs(rigidbody.velocity.y));
     }
 }

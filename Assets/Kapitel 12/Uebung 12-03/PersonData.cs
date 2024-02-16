@@ -4,6 +4,12 @@ public class PersonData
     private string lastName;
     private float heightInMeters;
     private int age;
+    
+    public string Name() => $"{firstName} {lastName}";
+
+    public float HeightInCentimeters => heightInMeters * 100f;
+
+    public bool IsOfLegalAge() => age >= 18;
 
     public PersonData(string firstName, string lastName, float heightInMeters, int age)
     {
@@ -12,10 +18,4 @@ public class PersonData
         this.heightInMeters = heightInMeters;
         this.age = age;
     }
-
-    public string Name() => $"{firstName} {lastName}";
-
-    public float HeightInCentimeters => heightInMeters * 100f;
-
-    public bool IsOfLegalAge() => age >= 18;
 }

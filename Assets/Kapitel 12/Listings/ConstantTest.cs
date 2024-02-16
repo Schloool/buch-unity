@@ -2,7 +2,7 @@
 
 public class ConstantTest : MonoBehaviour
 {
-    public const int FavoriteNumber = 42;
+    public const int FavoriteNumber = 69;
 
     private void Start()
     {

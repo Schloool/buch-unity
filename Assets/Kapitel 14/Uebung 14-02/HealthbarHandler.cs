@@ -3,10 +3,10 @@ using UnityEngine.UI;
 
 public class HealthbarHandler : MonoBehaviour
 {
-    [SerializeField] private float startHealthPoints;
+    [SerializeField] private int startHealthPoints;
 
     private Image healthBarImage;
-    private float currentHealthPoints;
+    private int currentHealthPoints;
 
     private void Awake()
     {
@@ -19,7 +19,7 @@ public class HealthbarHandler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && currentHealthPoints > 0)
         {
             currentHealthPoints--;
-            healthBarImage.fillAmount = currentHealthPoints / startHealthPoints;
+            healthBarImage.fillAmount = (float) currentHealthPoints / startHealthPoints;
         }
     }
 }

@@ -23,5 +23,7 @@ public class ImageFillTest : MonoBehaviour
 
             yield return null;
         }
+
+        image.fillAmount = 1f;
     }
 }

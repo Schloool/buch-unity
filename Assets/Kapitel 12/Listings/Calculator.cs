@@ -1,8 +1,22 @@
 ﻿public class Calculator
 {
-    public static int AddNumbers(string expression)
+    // Nicht-statisches Beispiel:
+    // private int a;
+    // private int b;
+    //
+    // public Calculator(int a, int b)
+    // {
+    //     this.a = a;
+    //     this.b = b;
+    // }
+    //
+    // public int AddAndDouble()
+    // {
+    //     return (a + b) * 2;
+    // }
+
+    public static int AddAndDouble(int a, int b)
     {
-        string[] numbers = expression.Split("+");
-        return int.Parse(numbers[0]) + int.Parse(numbers[1]);
+        return (a + b) * 2;
     }       
 }
