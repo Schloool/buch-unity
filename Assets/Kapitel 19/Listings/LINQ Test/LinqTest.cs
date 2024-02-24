@@ -18,6 +18,18 @@ public class LinqTest : MonoBehaviour
             Debug.Log($"{item.name} (Level {item.level})");
         }
         
+        GameItem itemWithHighestLevel;
+        int highestLevel = -1;
+        foreach (GameItem item in items)
+        {
+            if (item.level > highestLevel)
+            {
+                itemWithHighestLevel = item;
+                highestLevel = item.level;
+            }
+        }
+
+        
         items.ForEach(item => Debug.Log($"{item.name} (Level {item.level})"));
         
         items.Where(item => item.level > 3)

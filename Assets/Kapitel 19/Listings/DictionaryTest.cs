@@ -10,7 +10,7 @@ public class DictionaryTest : MonoBehaviour
             {"eins", 1},
             {"zwei", 2}
         };
-
+        
         Debug.Log(myDict["eins"]);
         Debug.Log(myDict["fuenf"]);
 
@@ -19,8 +19,7 @@ public class DictionaryTest : MonoBehaviour
         
         foreach (KeyValuePair<string,int> pair in myDict)
         {
-            Debug.Log($"Schlüssel: {pair.Key}");
-            Debug.Log($"Wert: {pair.Value}");
+            Debug.Log($"Schlüssel: {pair.Key}, Wert: {pair.Value}");
         }
         
         foreach (string key in myDict.Keys)

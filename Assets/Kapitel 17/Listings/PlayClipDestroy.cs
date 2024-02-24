@@ -8,7 +8,7 @@ public class PlayClipDestroy : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            AudioSource.PlayClipAtPoint(clip, Vector3.zero);
+            AudioSource.PlayClipAtPoint(clip, transform.position);
             Destroy(gameObject);
         }
     }

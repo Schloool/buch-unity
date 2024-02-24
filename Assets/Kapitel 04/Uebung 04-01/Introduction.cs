@@ -8,12 +8,12 @@ public class Introduction : MonoBehaviour
     void Start()
     {
         Debug.Log("Ich bin Max.");
-        Debug.Log("Ich bin 22 Jahre alt.");
+        Debug.Log("Ich bin 23 Jahre alt.");
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Schön dich kennenzulernen!");
+        Debug.Log("SchÃ¶n, dich kennenzulernen!");
     }
 }

@@ -11,7 +11,8 @@ public class PointCounter : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            OnUpdatePoints?.Invoke(++points);
+            points++;
+            OnUpdatePoints?.Invoke(points);
         }
     }
 }
