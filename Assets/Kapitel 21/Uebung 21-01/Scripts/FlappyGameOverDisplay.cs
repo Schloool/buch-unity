@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,6 +17,11 @@ public class FlappyGameOverDisplay : MonoBehaviour
         planeMovement = FindObjectOfType<FlappyPlaneMovement>();
         pointHandler = FindObjectOfType<FlappyPointHandler>();
         planeMovement.OnDeath += HandlePlaneDeath;
+    }
+
+    private void OnDestroy()
+    {
+        planeMovement.OnDeath -= HandlePlaneDeath;
     }
 
     private void HandlePlaneDeath()

@@ -14,7 +14,7 @@ public class PongPlayerMovement : MonoBehaviour
         if (col.gameObject.TryGetComponent(out PongBall ball))
         {
             ball.speed *= 1.05f;
-            ball.CurrentDirection = new Vector3(ball.CurrentDirection.x * -1, ball.CurrentDirection.y);
+            ball.CurrentDirection = new Vector3(-ball.CurrentDirection.x, ball.CurrentDirection.y);
         }
     }
     
@@ -22,7 +22,7 @@ public class PongPlayerMovement : MonoBehaviour
     {
         float verticalInput = GetVerticalInput();
         float oldY = transform.position.y;
-        float newY = Mathf.Clamp(oldY  + verticalInput * speed * Time.deltaTime, MinY, MaxY);
+        float newY = Mathf.Clamp(oldY + verticalInput * speed * Time.deltaTime, MinY, MaxY);
         transform.position = new Vector2(transform.position.x, newY);
     }
 

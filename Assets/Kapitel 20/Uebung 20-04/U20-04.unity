@@ -167,6 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe20147ad8445088144c371f7db7411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreZones:
+  - {fileID: 1463651748}
+  - {fileID: 1014946228}
 --- !u!1 &303167094
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf0a102febfe4df994bf94293a74bb6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forZone: {fileID: 1463651748}
+  zone: {fileID: 1463651748}
 --- !u!1 &349759758
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,7 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf0a102febfe4df994bf94293a74bb6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forZone: {fileID: 1014946228}
+  zone: {fileID: 1014946228}
 --- !u!1 &709161782
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,32 +5,44 @@ public class RacePlayer : MonoBehaviour
     [SerializeField] private float speed;
 
     private RaceCountdown countdown;
+    private RaceGoal raceGoal;
     private Rigidbody rigidbody;
-    private bool canMove;
     
     private void Awake()
     {
         countdown = FindObjectOfType<RaceCountdown>();
+        raceGoal = FindObjectOfType<RaceGoal>();
         countdown.OnChangeTimer += HandleCountdownUpdate;
-
+        raceGoal.OnEnd += HandleRaceEnd;
+        
         rigidbody = GetComponent<Rigidbody>();
-        canMove = false;
+        enabled = false;
+    }
+
+    private void OnDestroy()
+    {
+        countdown.OnChangeTimer -= HandleCountdownUpdate;
+        raceGoal.OnEnd -= HandleRaceEnd;
     }
 
     private void FixedUpdate()
     {
-        if (!canMove) return;
-
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
-        rigidbody.MovePosition(transform.position + move * speed * Time.fixedDeltaTime);
+        rigidbody.velocity = move * speed;
     }
 
     private void HandleCountdownUpdate(int time)
     {
         if (time == 0)
         {
-            canMove = true;
+            enabled = true;
             countdown.OnChangeTimer -= HandleCountdownUpdate;
         }
+    }
+    
+    private void HandleRaceEnd(bool playerWon)
+    {
+        rigidbody.velocity = Vector3.zero;
+        enabled = false;
     }
 }

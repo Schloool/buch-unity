@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed2d077584c941ea82cd468762fa5240, type: 3}
-  m_Name: Time Upgrade 1
+  m_Script: {fileID: 11500000, guid: 0cabd1c0eb4c4af0ae65b66650686e62, type: 3}
+  m_Name: Click Upgrade
   m_EditorClassIdentifier: 
-  costs: 5
-  name: Auto-Klicker
-  pointsPerSecond: 1
+  costs: 20
+  name: Kleiner Klick
+  pointsPerSecond: 0
+  pointsPerClick: 1

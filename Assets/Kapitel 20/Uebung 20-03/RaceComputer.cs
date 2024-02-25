@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.AI;
 
 public class RaceComputer : MonoBehaviour
@@ -11,6 +12,11 @@ public class RaceComputer : MonoBehaviour
     {
         countdown = FindObjectOfType<RaceCountdown>();
         countdown.OnChangeTimer += HandleCountdownUpdate;
+    }
+
+    private void OnDestroy()
+    {
+        countdown.OnChangeTimer -= HandleCountdownUpdate;
     }
 
     private void HandleCountdownUpdate(int time)

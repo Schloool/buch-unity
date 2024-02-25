@@ -1,20 +1,19 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PongGameReset : MonoBehaviour
 {
-    private PongScoreZone[] scoreZones;
+    [SerializeField] private List<PongScoreZone> scoreZones;
 
     private void Awake()
     {
-        scoreZones = FindObjectsOfType<PongScoreZone>();
-        scoreZones.ToList().ForEach(zone => zone.OnScore += HandleScoreChange);
+        scoreZones.ForEach(zone => zone.OnScore += HandleScoreChange);
     }
 
     private void OnDestroy()
     {
-        scoreZones.ToList().ForEach(zone => zone.OnScore -= HandleScoreChange);
+        scoreZones.ForEach(zone => zone.OnScore -= HandleScoreChange);
     }
 
     private void HandleScoreChange(int score)

@@ -1,21 +1,22 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PongScoreDisplay : MonoBehaviour
 {
-    [SerializeField] private PongScoreZone forZone;
+    [SerializeField] private PongScoreZone zone;
 
     private TMP_Text text;
     
     private void Awake()
     {
         text = GetComponent<TMP_Text>();
-        forZone.OnScore += HandleScoreChange;
+        zone.OnScore += HandleScoreChange;
     }
 
     private void OnDestroy()
     {
-        forZone.OnScore -= HandleScoreChange;
+        zone.OnScore -= HandleScoreChange;
     }
 
     private void HandleScoreChange(int score)

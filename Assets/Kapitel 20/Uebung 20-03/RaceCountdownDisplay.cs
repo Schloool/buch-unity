@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 
 public class RaceCountdownDisplay : MonoBehaviour
@@ -12,6 +13,11 @@ public class RaceCountdownDisplay : MonoBehaviour
         countdown = FindObjectOfType<RaceCountdown>();
 
         countdown.OnChangeTimer += UpdateText;
+    }
+
+    private void OnDestroy()
+    {
+        countdown.OnChangeTimer -= UpdateText;
     }
 
     private void UpdateText(int time)

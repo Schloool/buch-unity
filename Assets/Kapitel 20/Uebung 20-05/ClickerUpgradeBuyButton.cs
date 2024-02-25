@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,9 +23,17 @@ public class ClickerUpgradeBuyButton : MonoBehaviour
     private void Start()
     {
         nameText.text = upgrade.name;
-        valueText.text = upgrade is ClickerClickUpgrade clickUpgrade
-            ? $"+ {clickUpgrade.pointsPerClick} Punkte pro Klick"
-            : $"+ {((ClickerTimeUpgrade) upgrade).pointsPerSecond} Punkte pro Sekunde";
+        valueText.text = "";
+
+        if (upgrade.pointsPerClick > 0)
+        {
+            valueText.text += $"+ {upgrade.pointsPerClick} Punkte pro Klick\n";
+        }
+        
+        if (upgrade.pointsPerSecond > 0)
+        {
+            valueText.text += $"+ {upgrade.pointsPerSecond} Punkte pro Sekunde";
+        }
     }
 
     private void OnDestroy()
@@ -41,7 +47,7 @@ public class ClickerUpgradeBuyButton : MonoBehaviour
         button.interactable = points >= gameHandler.GetCostsForUpgrade(upgrade);
     }
 
-    private void HandleUpgradesChange(List<ClickerUpgrade> upgrades)
+    private void HandleUpgradesChange()
     {
         costText.text = $"{gameHandler.GetCostsForUpgrade(upgrade)} Punkte";
     }

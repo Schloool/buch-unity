@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 public class ClickerStatsDisplay : MonoBehaviour
@@ -29,7 +28,7 @@ public class ClickerStatsDisplay : MonoBehaviour
    }
    
 
-   private void HandleUpgradesChange(List<ClickerUpgrade> upgrades)
+   private void HandleUpgradesChange()
    {
       pointPerClickText.text = $"Punkte pro Klick: {gameHandler.GetPointsPerClick()}";
       pointPerSecondText.text = $"Punkte pro Sekunde: {gameHandler.GetPointsPerSecond()}";

@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 398cbd106be74cd3a9ac286d6d77535f, type: 3}
-  m_Name: Click Upgrade 2
+  m_Script: {fileID: 11500000, guid: 0cabd1c0eb4c4af0ae65b66650686e62, type: 3}
+  m_Name: Double Upgrade
   m_EditorClassIdentifier: 
-  costs: 250
-  name: "Gro\xDFer Klick"
-  pointsPerClick: 5
+  costs: 200
+  name: Guter Helfer
+  pointsPerSecond: 2
+  pointsPerClick: 2

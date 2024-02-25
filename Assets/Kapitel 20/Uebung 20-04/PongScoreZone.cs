@@ -11,7 +11,8 @@ public class PongScoreZone : MonoBehaviour
     {
         if (col.gameObject.TryGetComponent(out PongBall ball))
         {
-            OnScore?.Invoke(++score);
+            score++;
+            OnScore?.Invoke(score);
             StartCoroutine(ball.ResetBall());
         }
     }

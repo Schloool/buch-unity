@@ -8,7 +8,7 @@ using UnityEngine;
 public class ClickerGameHandler : MonoBehaviour
 {
     public event Action<int> OnChangePoints;
-    public event Action<List<ClickerUpgrade>> OnChangeUpgrades;
+    public event Action OnChangeUpgrades;
 
     private int Points
     {
@@ -21,8 +21,9 @@ public class ClickerGameHandler : MonoBehaviour
     }
 
     private string saveFilePath;
-    [SerializeField] private int points;
-    [SerializeField] private List<ClickerUpgrade> upgrades;
+    
+    [SerializeField] [HideInInspector] private int points;
+    [SerializeField] [HideInInspector] private List<ClickerUpgrade> upgrades;
 
     private void Awake()
     {
@@ -41,13 +42,13 @@ public class ClickerGameHandler : MonoBehaviour
     private void Start()
     {
         OnChangePoints?.Invoke(points);
-        OnChangeUpgrades?.Invoke(upgrades);
+        OnChangeUpgrades?.Invoke();
         StartCoroutine(TimeUpgradeRoutine());
     }
 
     private void OnDestroy()
     {
-        File.WriteAllText(saveFilePath , JsonUtility.ToJson(this));
+        File.WriteAllText(saveFilePath, JsonUtility.ToJson(this));
     }
 
     public void Click()
@@ -66,19 +67,17 @@ public class ClickerGameHandler : MonoBehaviour
 
     public int GetPointsPerClick()
     {
-        return 1 + upgrades.OfType<ClickerClickUpgrade>()
-            .Sum(clickerUpgrade => clickerUpgrade.pointsPerClick);
+        return 1 + upgrades.Sum(clickerUpgrade => clickerUpgrade.pointsPerClick);
     }
 
     public int GetPointsPerSecond()
     {
-        return upgrades.OfType<ClickerTimeUpgrade>()
-            .Sum(timeUpgrade => timeUpgrade.pointsPerSecond);
+        return upgrades.Sum(timeUpgrade => timeUpgrade.pointsPerSecond);
     }
 
     public int GetCostsForUpgrade(ClickerUpgrade newUpgrade)
     {
-        int level = upgrades.Count(upgrade => upgrade.name == newUpgrade.name);
+        int level = upgrades.Count(upgrade => upgrade == newUpgrade);
         return newUpgrade.GetCostsForLevel(level + 1);
     }
     
@@ -89,6 +88,6 @@ public class ClickerGameHandler : MonoBehaviour
 
         Points -= costs;
         upgrades.Add(upgrade);
-        OnChangeUpgrades?.Invoke(upgrades);
+        OnChangeUpgrades?.Invoke();
     }
 }
