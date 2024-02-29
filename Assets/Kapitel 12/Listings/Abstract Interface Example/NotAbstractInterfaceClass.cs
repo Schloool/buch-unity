@@ -4,6 +4,6 @@ public class NotAbstractInterfaceClass : AbstractInterfaceClass
 {
     public override void TestMethod()
     {
-        Debug.Log("Methode des Interfaces");
+        Debug.Log("Methode des Interface");
     }
 }
