@@ -4,12 +4,10 @@ using UnityEngine.SceneManagement;
 public class PlatformGoalDisplay : MonoBehaviour
 {
     [SerializeField] private GameObject goalPanel;
-
-    private PlatformGoal goal;
+    [SerializeField] private PlatformGoal goal;
     
     private void Awake()
     {
-        goal = FindObjectOfType<PlatformGoal>();
         goal.OnReachGoal += HandleReachGoal;
     }
 

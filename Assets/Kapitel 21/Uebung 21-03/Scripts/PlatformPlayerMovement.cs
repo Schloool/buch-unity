@@ -2,8 +2,8 @@
 
 public class PlatformPlayerMovement : MonoBehaviour
 {
-    private static readonly int MovementHash = Animator.StringToHash("movementX");
-    private static readonly int IsJumpingHash = Animator.StringToHash("isJumping");
+    private static readonly int movementHash = Animator.StringToHash("movementX");
+    private static readonly int isJumpingHash = Animator.StringToHash("isJumping");
     
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
@@ -11,7 +11,8 @@ public class PlatformPlayerMovement : MonoBehaviour
     private PlatformPlayerHealth playerHealth;
     private Rigidbody2D rigidbody;
     private Animator animator;
-    private bool isJumping;
+    private bool jump;
+    private bool isInAir;
 
     private void Awake()
     {
@@ -30,20 +31,26 @@ public class PlatformPlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        float movementX = Input.GetAxisRaw("Horizontal");
-        transform.position += Vector3.right * movementX * speed * Time.deltaTime;
-
-        if (!isJumping && Input.GetKeyDown(KeyCode.Space))
+        if (!isInAir && Input.GetKeyDown(KeyCode.Space))
         {
-            rigidbody.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
+            jump = true;
         }
-        
-        animator.SetFloat(MovementHash, movementX);
     }
 
     private void FixedUpdate()
     {
-        isJumping = Mathf.Abs(rigidbody.velocity.y) > 0.05f;
-        animator.SetBool(IsJumpingHash, isJumping);
+        float movementX = Input.GetAxisRaw("Horizontal") * speed;
+        rigidbody.velocity = new Vector2(movementX * speed, rigidbody.velocity.y);
+        
+        if (jump)
+        {
+            jump = false;
+            rigidbody.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
+        }
+
+        isInAir = Mathf.Abs(rigidbody.velocity.y) > 0.05f;
+
+        animator.SetFloat(movementHash, movementX);
+        animator.SetBool(isJumpingHash, isInAir);
     }
 }

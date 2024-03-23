@@ -98,5 +98,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 5150560948834122901, guid: 99111053c8c76a34187bf5a9153ffa3d, type: 3}
-  shotFrequency: 2.5
-  minPlayerDistance: 15
+  shotInterval: 3
+  minPlayerDistance: 7

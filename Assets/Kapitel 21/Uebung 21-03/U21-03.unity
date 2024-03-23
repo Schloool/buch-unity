@@ -657,7 +657,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 4
 --- !u!114 &955721629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -670,8 +670,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3c56843aed4c2cae066bdf385b670a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  jumpForce: 6
+  speed: 2.5
+  jumpForce: 8
 --- !u!114 &955721630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -809,6 +809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goalPanel: {fileID: 803847494}
+  goal: {fileID: 2023824522}
 --- !u!1 &1052336935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,7 +1314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9058247104469457509, guid: 1390a6c066dcbf943b9673ac79e0bf62, type: 3}
       propertyPath: minPlayerDistance
-      value: 7
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

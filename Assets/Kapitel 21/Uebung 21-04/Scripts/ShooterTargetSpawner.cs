@@ -31,7 +31,7 @@ public class ShooterTargetSpawner : MonoBehaviour
     {
         yield return null;
         
-        while (timer.RemainingTime > 0f)
+        while (!timer.HasFinished)
         {
             yield return new WaitForSeconds(3.5f);
             SpawnTarget();

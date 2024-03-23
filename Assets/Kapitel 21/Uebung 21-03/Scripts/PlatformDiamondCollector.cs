@@ -14,9 +14,18 @@ public class PlatformDiamondCollector : MonoBehaviour
         AllDiamondCount = FindObjectsOfType<PlatformDiamond>().Length;
         collectedCount = 0;
     }
+    
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (!col.TryGetComponent(out PlatformDiamond diamond)) return;
+        
+        CollectDiamond();
+        diamond.HandleCollection();
+    }
 
     public void CollectDiamond()
     {
-        OnCollectDiamond?.Invoke(++collectedCount);
+        collectedCount++;
+        OnCollectDiamond?.Invoke(collectedCount);
     }
 }

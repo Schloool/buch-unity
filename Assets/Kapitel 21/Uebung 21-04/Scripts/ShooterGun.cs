@@ -11,13 +11,15 @@ public class ShooterGun : MonoBehaviour
 
     private void Update()
     {
-        if (!Input.GetMouseButtonDown(0)) return;
-        if (isReloading) return;
-        
-        ShooterBullet bullet = Instantiate(bulletPrefab, spawnPosition.position, Quaternion.identity);
-        bullet.Direction = transform.forward;
-        bullet.transform.forward = transform.forward;
+        if (!isReloading && Input.GetMouseButtonDown(0))
+        {
+            Shoot();
+        }
+    }
 
+    private void Shoot()
+    {
+        Instantiate(bulletPrefab, spawnPosition.position, transform.rotation);
         StartCoroutine(ReloadRoutine());
     }
 

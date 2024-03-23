@@ -11,7 +11,7 @@ public class ShooterPointCounter : MonoBehaviour
 
     public void AddPointsForDistance(float distance)
     {
-        currentPoints += (int) Mathf.Max(10, Mathf.Min(5 + distance * 5, 50));
+        currentPoints += (int) Mathf.Clamp(5 + distance * 5, 10, 50);
         OnChangePoints?.Invoke(currentPoints);
     }
 }

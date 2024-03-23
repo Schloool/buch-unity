@@ -13,7 +13,7 @@ public class PlatformEnemyProjectile : MonoBehaviour
     private void Update()
     {
         transform.position += Vector3.left * movementSpeed * Time.deltaTime;
-        transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
+        transform.rotation *= Quaternion.Euler(Vector3.forward * rotationSpeed * Time.deltaTime);
     }
     
     private void OnTriggerEnter2D(Collider2D col)

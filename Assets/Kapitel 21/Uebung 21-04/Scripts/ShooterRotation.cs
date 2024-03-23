@@ -6,7 +6,6 @@ public class ShooterCamera : MonoBehaviour
     [SerializeField] private float maxVerticalRotation = 90f;
 
     private ShooterTimer timer;
-
     private float rotationX;
     private float rotationY;
 
@@ -15,14 +14,14 @@ public class ShooterCamera : MonoBehaviour
         timer = FindObjectOfType<ShooterTimer>();
     }
 
-    void Start()
+    private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void Update()
+    private void Update()
     {
-        if (timer.RemainingTime < 0f)
+        if (timer.HasFinished)
         {
             Cursor.lockState = CursorLockMode.None;
             Destroy(this);

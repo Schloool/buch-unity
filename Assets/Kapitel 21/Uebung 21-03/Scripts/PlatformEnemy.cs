@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlatformEnemy : MonoBehaviour
 {
     [SerializeField] private PlatformEnemyProjectile projectilePrefab;
-    [SerializeField] private float shotFrequency;
+    [SerializeField] private float shotInterval;
     [SerializeField] private float minPlayerDistance;
 
     private IEnumerator Start()
@@ -13,7 +13,7 @@ public class PlatformEnemy : MonoBehaviour
         
         while (true)
         {
-            yield return new WaitForSeconds(shotFrequency);
+            yield return new WaitForSeconds(shotInterval);
 
             if (Vector3.Distance(playerTransform.position, transform.position) <= minPlayerDistance)
             {

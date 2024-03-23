@@ -6,20 +6,22 @@ public class ShooterTimer : MonoBehaviour
 {
     public event Action<float> OnChangeTime;
     public event Action OnTimerEnd;
-    
-    public float RemainingTime { get; private set; }
+
     public float StartTime => startTime;
+    public bool HasFinished => remainingTime < 0f;
 
     [SerializeField] private float startTime;
+    
+    private float remainingTime;
 
     private IEnumerator Start()
     {
-        RemainingTime = startTime;
+        remainingTime = startTime;
 
-        while (RemainingTime > 0f)
+        while (!HasFinished)
         {
-            RemainingTime -= Time.deltaTime;
-            OnChangeTime?.Invoke(RemainingTime);
+            remainingTime -= Time.deltaTime;
+            OnChangeTime?.Invoke(remainingTime);
             
             yield return null;
         }
@@ -29,7 +31,7 @@ public class ShooterTimer : MonoBehaviour
 
     public void AddTime(float seconds)
     {
-        RemainingTime = Mathf.Min(RemainingTime + seconds, startTime);
-        OnChangeTime?.Invoke(RemainingTime);
+        remainingTime = Mathf.Min(remainingTime + seconds, startTime);
+        OnChangeTime?.Invoke(remainingTime);
     }
 }

@@ -26,8 +26,9 @@ public class PlatformPlayerHealth : MonoBehaviour
     public void Damage()
     {
         if (currentHealth <= 0) return;
-        
-        OnHealthUpdate?.Invoke(--currentHealth);
+
+        currentHealth--;
+        OnHealthUpdate?.Invoke(currentHealth);
 
         if (currentHealth <= 0)
         {
