@@ -1,6 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
+/// <summary>
+/// Script für den Zielbereich, den der Spieler in der Scene erreichen muss.
+/// </summary>
 public class PlatformGoal : MonoBehaviour
 {
     public event Action OnReachGoal; 

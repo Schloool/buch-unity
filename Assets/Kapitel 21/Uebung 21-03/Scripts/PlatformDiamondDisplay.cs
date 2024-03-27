@@ -1,6 +1,9 @@
 ﻿using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Script für die Anzeige der bisher eingesammelten Diamanten.
+/// </summary>
 public class PlatformDiamondDisplay : MonoBehaviour
 {
     private TMP_Text text;
@@ -18,6 +21,9 @@ public class PlatformDiamondDisplay : MonoBehaviour
         HandleCollectDiamond(0);
     }
 
+    /// <summary>
+    /// Behandelt das Einsammeln eines neuen Diamantens, indem die bisher gesammelte Anzahl im Text aktualisiert wird.
+    /// </summary>
     private void HandleCollectDiamond(int diamonds)
     {
         text.text = $"{diamonds} / {diamondCollector.AllDiamondCount}";

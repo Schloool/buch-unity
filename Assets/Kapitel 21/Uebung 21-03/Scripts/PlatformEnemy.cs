@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Script für einen Gegner, der in der Scene steht und in regelmäßigen Zeitabständen Projektile in die Blickrichtung
+/// schießt. 
+/// </summary>
 public class PlatformEnemy : MonoBehaviour
 {
     [SerializeField] private PlatformEnemyProjectile projectilePrefab;

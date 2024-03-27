@@ -1,6 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
+/// <summary>
+/// Verwaltungsscript für die Lebenspunkte des Spielers.
+/// </summary>
 public class PlatformPlayerHealth : MonoBehaviour
 {
     public event Action<int> OnHealthUpdate;
@@ -23,6 +26,11 @@ public class PlatformPlayerHealth : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Fügt dem Spieler einen Schadenspunkt zu.
+    ///
+    /// Sind keine Lebenspunkte mehr übrig, wird der Tod des Spielers gemeldet.
+    /// </summary>
     public void Damage()
     {
         if (currentHealth <= 0) return;
@@ -36,6 +44,9 @@ public class PlatformPlayerHealth : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Leitet den Tod des Spielers ein, indem alle verbleibenden Lebenspunkte entfernt werden.
+    /// </summary>
     private void Kill()
     {
         for (int i = 0; i < currentHealth; i++)

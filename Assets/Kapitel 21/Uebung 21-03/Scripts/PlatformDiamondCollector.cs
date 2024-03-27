@@ -1,6 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
+/// <summary>
+/// Verwaltungsscript für das Sammeln der Diamanten in der Scene.
+/// </summary>
 public class PlatformDiamondCollector : MonoBehaviour
 {
     public event Action<int> OnCollectDiamond;
@@ -19,13 +22,8 @@ public class PlatformDiamondCollector : MonoBehaviour
     {
         if (!col.TryGetComponent(out PlatformDiamond diamond)) return;
         
-        CollectDiamond();
-        diamond.HandleCollection();
-    }
-
-    public void CollectDiamond()
-    {
         collectedCount++;
         OnCollectDiamond?.Invoke(collectedCount);
+        diamond.HandleCollection();
     }
 }

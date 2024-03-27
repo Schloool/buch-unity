@@ -1,6 +1,10 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// Script für eine Kugel, die im Spiel abgeschossen wurde.
+///
+/// Eine Kugel bewegt sich mit gleichbleibender Geschwindigkeit nach vorn.
+/// </summary>
 public class ShooterBullet : MonoBehaviour
 {
     private Rigidbody rigidbody;

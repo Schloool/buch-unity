@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Script für ein Projektil, das von einem Gegner verschossen wird.
+/// </summary>
 public class PlatformEnemyProjectile : MonoBehaviour
 {
     [SerializeField] private float movementSpeed;

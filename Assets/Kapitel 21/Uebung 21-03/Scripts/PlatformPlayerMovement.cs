@@ -1,5 +1,10 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Script für die Bewegungssteuerung des Spielers.
+///
+/// Dieses Script kümmert sich zur Vereinfachung außerdem um das Abspielen der passenden Lauf- und Sprunganimationen.
+/// </summary>
 public class PlatformPlayerMovement : MonoBehaviour
 {
     private static readonly int movementHash = Animator.StringToHash("movementX");
@@ -21,14 +26,7 @@ public class PlatformPlayerMovement : MonoBehaviour
         playerHealth = GetComponent<PlatformPlayerHealth>();
         playerHealth.OnDeath += HandleDeath;
     }
-
-    private void HandleDeath()
-    {
-        playerHealth.OnDeath -= HandleDeath;
-        Destroy(rigidbody);
-        Destroy(this);
-    }
-
+    
     private void Update()
     {
         if (!isInAir && Input.GetKeyDown(KeyCode.Space))
@@ -48,9 +46,19 @@ public class PlatformPlayerMovement : MonoBehaviour
             rigidbody.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
         }
 
-        isInAir = Mathf.Abs(rigidbody.velocity.y) > 0.05f;
+        isInAir = Mathf.Abs(rigidbody.velocity.y) > 0.01f;
 
         animator.SetFloat(movementHash, movementX);
         animator.SetBool(isJumpingHash, isInAir);
+    }
+
+    /// <summary>
+    /// Behandelt den Tod des Spielers, indem der zugrundeliegende Rigidbody sowie diese Steuerung zerstört werden.
+    /// </summary>
+    private void HandleDeath()
+    {
+        playerHealth.OnDeath -= HandleDeath;
+        Destroy(rigidbody);
+        Destroy(this);
     }
 }

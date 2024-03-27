@@ -2,6 +2,9 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Script zur Verwaltung des Timers, der die verbleibende Zeit zum Treffen der Scheiben bereitstellt.
+/// </summary>
 public class ShooterTimer : MonoBehaviour
 {
     public event Action<float> OnChangeTime;
@@ -29,6 +32,9 @@ public class ShooterTimer : MonoBehaviour
         OnTimerEnd?.Invoke();
     }
 
+    /// <summary>
+    /// Fügt dem Timer Zeit hinzu.
+    /// </summary>
     public void AddTime(float seconds)
     {
         remainingTime = Mathf.Min(remainingTime + seconds, startTime);

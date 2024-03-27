@@ -1,6 +1,12 @@
 ﻿using UnityEngine;
 
-public class ShooterCamera : MonoBehaviour
+/// <summary>
+/// Script für die Rotationsbewegung, mit der sich der Spieler durch das Bewegen der Maus drehen und das Fadenkreuz auf
+/// Ziele ausrichten kann.
+///
+/// Die Rotation nach oben hin wird dabei durch einen Maximalwinkel limitiert.
+/// </summary>
+public class ShooterRotation : MonoBehaviour
 {
     [SerializeField] private float sensitivity;
     [SerializeField] private float maxVerticalRotation = 90f;

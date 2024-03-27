@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Script, durch das die Kamera dem Spieler mit einem vorgegebenen Abstand folgt.
+/// </summary>
 public class PlatformCamera : MonoBehaviour
 {
     [SerializeField] private Transform playerTransform;
