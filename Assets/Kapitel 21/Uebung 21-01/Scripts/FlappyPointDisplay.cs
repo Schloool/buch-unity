@@ -1,6 +1,9 @@
 ﻿using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Enthält die Anzeigelogik für die bisher im Spiel erzielten Punkte.
+/// </summary>
 public class FlappyPointDisplay : MonoBehaviour
 {
     private TMP_Text text;
@@ -19,6 +22,9 @@ public class FlappyPointDisplay : MonoBehaviour
         pointHandler.OnChangePoints -= HandlePointChange;
     }
 
+    /// <summary>
+    /// Aktualisiert den hinterlegten Text mit einem neuen Punktzahl-Wert.
+    /// </summary>
     private void HandlePointChange(int points)
     {
         text.text = points.ToString();

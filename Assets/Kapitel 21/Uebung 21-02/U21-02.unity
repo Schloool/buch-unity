@@ -1791,6 +1791,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c91332cc6c70f524fb4c17d01562bf34, type: 2}
   startPoint: {fileID: 1570600731}
   targetPoint: {fileID: 607449707}
+  enemiesPerWaveMultiplicator: 2.5
+  enemySpawnDelay: 0.75
 --- !u!114 &702970538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1816,7 +1818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dffbec57b98b4aa99db2d0e75a09b313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMoney: 75
+  initialMoney: 75
 --- !u!114 &702970540
 MonoBehaviour:
   m_ObjectHideFlags: 0

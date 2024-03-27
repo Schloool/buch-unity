@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Kanone
   model: {fileID: 919132149155446097, guid: c1f916c0bf4e6a9498b8b4c8671f4ac5, type: 3}
   price: 50
-  shotFrequency: 2
+  shotInterval: 2
   bulletDamage: 45
   range: 3

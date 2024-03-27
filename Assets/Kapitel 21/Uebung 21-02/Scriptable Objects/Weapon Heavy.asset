@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Blaster
   model: {fileID: 919132149155446097, guid: 51fa893cde1363845802f7f887046b11, type: 3}
   price: 100
-  shotFrequency: 4
+  shotInterval: 4
   bulletDamage: 60
   range: 6

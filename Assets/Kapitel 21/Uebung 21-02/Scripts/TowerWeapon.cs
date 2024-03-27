@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections;
-using System.Linq;
+﻿using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Script für eine Waffe, die platziert werden kann, um nahegelegene Gegner anzugreifen.
+/// </summary>
 public class TowerWeapon : MonoBehaviour
 {
-    public TowerWeaponType WeaponType { get; set; }
+    private TowerWeaponType weaponType;
     public bool Placed { get; set; }
     
     private TowerWaveHandler waveHandler;
@@ -15,37 +16,40 @@ public class TowerWeapon : MonoBehaviour
         waveHandler = FindObjectOfType<TowerWaveHandler>();
     }
 
-    private void Start()
+    /// <summary>
+    /// Beendet den Platzierungsvorgang der Waffe und schaltet sie für Angriffe "scharf".
+    ///
+    /// Dabei wird ein bestimmter Waffentyp gesetzt, anhand dessen sich das Angriffsverhalten ableitet.
+    /// </summary>
+    public void Deploy(TowerWeaponType weaponType)
     {
+        this.weaponType = weaponType;
         StartCoroutine(ShootRoutine());
     }
-
+    
+    /// <summary>
+    /// Coroutine für das Schießen dieser Waffe.
+    ///
+    /// Die Waffe schießt dabei in regelmäßigen Zeitabständen auf den nächstgelegenen Gegner.
+    /// </summary>
     private IEnumerator ShootRoutine()
     {
-        float nextShotTime = WeaponType.shotFrequency;
+        float nextShotTime = weaponType.shotInterval;
         while (true)
         {
-            if (!Placed || WeaponType == null)
-            {
-                yield return null;
-                continue;
-            }
-            
-            TowerEnemy target = waveHandler.ActiveEnemies
-                .OrderBy(enemy => Vector3.Distance(enemy.transform.position, transform.position))
-                .FirstOrDefault();
-            nextShotTime -= Time.deltaTime;
             yield return null;
 
+            TowerEnemy target = waveHandler.GetClosestEnemyToPoint(transform.position);
             if (target == null || 
-                Vector3.Distance(target.transform.position, transform.position) > WeaponType.range) continue;
+                Vector3.Distance(target.transform.position, transform.position) > weaponType.range) continue;
 
             transform.LookAt(target.transform);
             
+            nextShotTime -= Time.deltaTime;
             if (nextShotTime <= 0f)
             {
-                target.Damage(WeaponType.bulletDamage);
-                nextShotTime = WeaponType.shotFrequency;
+                target.Damage(weaponType.bulletDamage);
+                nextShotTime += weaponType.shotInterval;
             }
         }
     }

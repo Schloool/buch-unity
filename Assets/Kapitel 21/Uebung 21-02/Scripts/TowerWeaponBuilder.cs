@@ -1,5 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
+/// <summary>
+/// Script, das den Bauvorgang für eine Waffe vornimmt.
+/// </summary>
 public class TowerWeaponBuilder : MonoBehaviour
 {
     [SerializeField] private GameObject weaponBuildPlane;
@@ -23,18 +27,22 @@ public class TowerWeaponBuilder : MonoBehaviour
         {
             CurrentWeapon.transform.position = hit.point;
         }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            CurrentWeapon.Placed = true;
-            CurrentWeapon = null;
-        }
     }
 
-    public void StartPlacement(TowerWeaponType weaponType)
+    /// <summary>
+    /// Beginnt den Platzierungsvorgang, indem die Vorlage in der Scene erstellt wird und von da an dem Mauszeiger
+    /// folgt.
+    ///
+    /// Der Platzierungsvorgang wird erst beim nächsten Mausklick abgeschlossen, nach welchem die Waffe aktiv wird.
+    /// </summary>
+    public IEnumerator StartPlacement(TowerWeaponType weaponType)
     {
         CurrentWeapon = Instantiate(weaponPrefab, weaponBuildPlane.transform.position, Quaternion.identity);
         Instantiate(weaponType.model, CurrentWeapon.transform);
-        CurrentWeapon.WeaponType = weaponType;
+
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+        CurrentWeapon.Deploy(weaponType);
+        CurrentWeapon.Placed = true;
+        CurrentWeapon = null;
     }
 }

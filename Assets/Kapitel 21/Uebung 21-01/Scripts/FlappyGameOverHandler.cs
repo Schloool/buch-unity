@@ -1,9 +1,13 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FlappyGameOverDisplay : MonoBehaviour
+/// <summary>
+/// Dieses Script ist für die Verwaltung der Logik verantwortlich, die beim Spielende abgespielt wird.
+/// Dazu gehört neben der Anzeige passender UI-Elemente auch das Setzen der Timescale sowie das Neuladen der
+/// Scene, wenn der passende Button gedrückt wird.
+/// </summary>
+public class FlappyGameOverHandler : MonoBehaviour
 {
     [SerializeField] private GameObject panelObject;
     [SerializeField] private TMP_Text scoreText;
@@ -31,10 +35,11 @@ public class FlappyGameOverDisplay : MonoBehaviour
         panelObject.SetActive(true);
         scoreText.text = pointHandler.Points.ToString();
         highscoreText.text = pointHandler.GetHighscore().ToString();
+        Time.timeScale = 0f;
 
         planeMovement.OnDeath -= HandlePlaneDeath;
     }
-
+    
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

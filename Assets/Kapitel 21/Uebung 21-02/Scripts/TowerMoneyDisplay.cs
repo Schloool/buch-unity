@@ -1,6 +1,9 @@
 ﻿using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Script für die Anzeige des aktuell zur Verfügung stehenden Gelds.
+/// </summary>
 public class TowerMoneyDisplay : MonoBehaviour
 {
     private TMP_Text text;
@@ -18,6 +21,9 @@ public class TowerMoneyDisplay : MonoBehaviour
         moneyHandler.OnChangeMoney -= HandleChangeMoney;
     }
 
+    /// <summary>
+    /// Reagiert auf Änderungen des Spieler-Gelds und aktualisiert die entsprechende UI-Textanzeige.
+    /// </summary>
     private void HandleChangeMoney(uint money)
     {
         text.text = $"{money}$";

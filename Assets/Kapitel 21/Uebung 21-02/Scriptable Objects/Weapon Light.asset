@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Balliste
   model: {fileID: 919132149155446097, guid: 884f68f82f25b8e4e9b4e6300ebab283, type: 3}
   price: 25
-  shotFrequency: 2.5
+  shotInterval: 2.5
   bulletDamage: 35
   range: 5

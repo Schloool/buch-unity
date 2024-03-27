@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class CalcLambaExample : MonoBehaviour
+public class CalcLambdaExample : MonoBehaviour
 {
     public delegate int NumberDelegate(int a, int b);
     

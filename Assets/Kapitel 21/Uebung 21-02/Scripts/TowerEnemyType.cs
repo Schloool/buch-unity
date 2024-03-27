@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Scriptable Object für einen Gegner-Typ, der im Laufe einer Welle erscheinen kann.
+/// </summary>
 [CreateAssetMenu(menuName = "Tower Defense/Enemy Type")]
 public class TowerEnemyType : ScriptableObject
 {

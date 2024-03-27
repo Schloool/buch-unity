@@ -1,8 +1,10 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Script für einen Button, der einen bestimmten Waffentyp kauft.
+/// </summary>
 public class TowerWeaponButton : MonoBehaviour
 {
     [SerializeField] private TowerWeaponType weaponType;
@@ -34,14 +36,26 @@ public class TowerWeaponButton : MonoBehaviour
         moneyHandler.OnChangeMoney -= HandleChangeMoney;
     }
 
+    /// <summary>
+    /// Kauft diesen Waffentyp.
+    ///
+    /// Das Platzieren ist nur möglich, wenn aktuell nicht schon eine Waffe platziert wird.
+    /// Ist genug Geld vorhanden, startet sofort der Platzierungsvorgang für die neue Waffe.
+    /// </summary>
     public void Buy()
     {
         if (weaponBuilder.CurrentWeapon != null) return;
-        
-        moneyHandler.RemoveMoney(weaponType.price);
-        weaponBuilder.StartPlacement(weaponType);
+
+        if (moneyHandler.TryRemoveMoney(weaponType.price))
+        {
+            StartCoroutine(weaponBuilder.StartPlacement(weaponType));
+        }
     }
 
+    /// <summary>
+    /// Behandelt die Änderung des Geldes des Spielerkontos, indem der Button deaktiviert wird, wenn nicht mehr genügend
+    /// Geld zum Kaufen der Waffe übrig ist.
+    /// </summary>
     private void HandleChangeMoney(uint money)
     {
         button.interactable = money >= weaponType.price;

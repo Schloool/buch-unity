@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Script für eine Trigger-Zone, durch die der Spieler beim Durchfliegen einen Punkt erhält.
+/// </summary>
 public class FlappyScoreDetector : MonoBehaviour
 {
     private FlappyPointHandler pointHandler;

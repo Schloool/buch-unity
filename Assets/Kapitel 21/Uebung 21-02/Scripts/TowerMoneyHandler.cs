@@ -1,30 +1,44 @@
 ﻿using System;
 using UnityEngine;
 
+/// <summary>
+/// Verwaltungsscript für das Geld, das dem Spieler zur Verfügung steht.
+/// </summary>
 public class TowerMoneyHandler : MonoBehaviour
 {
     public event Action<uint> OnChangeMoney;
 
-    public uint CurrentMoney => currentMoney;
-
-    [SerializeField] private uint currentMoney;
+    public uint CurrentMoney { get; private set; }
+    
+    [SerializeField] private uint initialMoney;
 
     private void Start()
     {
-        OnChangeMoney?.Invoke(currentMoney);
+        CurrentMoney = 0;
+        AddMoney(initialMoney);
     }
 
+    /// <summary>
+    /// Fügt einen gegebenen Geldbetrag auf das Konto des Spielers hinzu.
+    /// </summary>
     public void AddMoney(uint money)
     {
-        currentMoney += money;
-        OnChangeMoney?.Invoke(currentMoney);
+        CurrentMoney += money;
+        OnChangeMoney?.Invoke(CurrentMoney);
     }
 
-    public void RemoveMoney(uint money)
+    /// <summary>
+    /// Versucht, einen bestimmten Geldbetrag vom Konto des Spielers abzuziehen.
+    /// 
+    /// War das Abziehen erfolgreich, gibt die Methode true zurück.
+    /// War zu wenig Geld auf dem Konto des Spielers, gibt die Methode false zurück.
+    /// </summary>
+    public bool TryRemoveMoney(uint money)
     {
-        if (currentMoney < money) return;
+        if (CurrentMoney < money) return false;
 
-        currentMoney -= money;
-        OnChangeMoney?.Invoke(currentMoney);
+        CurrentMoney -= money;
+        OnChangeMoney?.Invoke(CurrentMoney);
+        return true;
     }
 }
