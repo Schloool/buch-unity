@@ -13,7 +13,6 @@ public class CharacterMovementAnimator : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
-        
     }
 
     private void Update()
